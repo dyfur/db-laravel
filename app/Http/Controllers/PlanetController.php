@@ -8,12 +8,12 @@ class PlanetController extends Controller
 {
     public function index()
     {
-        return Planet::all();  
+        return Planet::with('solarSystem')->get();  
     }
 
     public function show($id)
     {
-        return Planet::find($id);   
+        return Planet::with('solarSystem')->find($id); 
     }
 }
 ?>
